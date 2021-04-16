@@ -1,3 +1,17 @@
 {% extends 'base.html' %}
-
-lol
+{% block body %}
+ <br>
+<br>
+<center>
+<div class="card text-white bg-dark mb-3" style="max-width: 18rem;">
+  <div class="card-header">Result for question: {{poll.question}}</div>
+  <div class="card-body">
+    <h5 class="card-title">Total Votes : {{ poll.total_votes }}</h5>
+    <p class="card-text">{{poll.o1}} : {{poll.o1_votes}} Votes<br>
+{{poll.o2}} : {{poll.o2_votes}} Votes<br>
+{{poll.o3}} : {{poll.o3_votes}} Votes<br>
+{{poll.o4}} : {{poll.o4_votes}} Votes<br></p>
+  </div>
+</div>
+</center>
+{% endblock body %}

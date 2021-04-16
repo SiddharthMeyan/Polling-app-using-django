@@ -1,9 +1,21 @@
 {% extends 'base.html' %}
 {% block body %}
+<!-- Background image -->
+<div
+  class="bg-image"
+  style="
+    background-image: url('https://i.pinimg.com/originals/5d/db/aa/5ddbaa7df95aacf12e7ae5a5181d0fd7.jpg');
+    height: 100vh;
+  "
+>
+<!-- Background image -->
+
+
 <form action="" method="POST">
     {% csrf_token %}
-    <form action="" method="post">
-        <div class="container">
+  <div class="card-body">
+    <div class="card text-light bg-dark mb-3" >
+        <div class="container mt-4">
             <div class="row">
                 <div class="col-md-6">
                     <div class="panel panel-primary">
@@ -63,5 +75,7 @@
                     </div>
                 </div>
             </div>
+            </div>
+            </div>
         </div>
-</form>{% endblock body %}
+</form></div>{% endblock body %}

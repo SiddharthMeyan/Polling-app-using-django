@@ -7,7 +7,7 @@ class Polls(models.Model):
     o2= models.CharField(max_length=40)
     o3= models.CharField(max_length=40)
     o4= models.CharField(max_length=40)
-    total_votes = models.IntegerField(blank=True,null=True)
+    total_votes = models.IntegerField(default=0)
     o1_votes = models.IntegerField(default=0)
     o2_votes = models.IntegerField(default=0)
     o3_votes = models.IntegerField(default=0)
