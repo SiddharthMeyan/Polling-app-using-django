@@ -3,8 +3,7 @@ from base.models import Polls
 from django.http import HttpResponse
 from django.contrib import messages
 from django.urls import reverse_lazy
-from django.views.generic import CreateView
-
+from django.views.generic import CreateView, DeleteView
 # Create your views here.
 
 def index(request):
@@ -46,4 +45,10 @@ class PollAdd(CreateView):
     model = Polls
     template_name = 'poll_add.html'
     fields = ('question','o1','o2','o3','o4')
+    success_url = reverse_lazy('home')
+
+
+class DeletePollView(DeleteView):
+    model = Polls
+    template_name = 'delete_poll.html'
     success_url = reverse_lazy('home')

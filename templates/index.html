@@ -10,11 +10,12 @@
   <!-- Background image -->
   <center>
     {% for poll in all_polls %}
-    <div class="card" style="width: 18rem;">
+    <div class="card" style="width: 25rem;">
       <div class="card-body">
         <h4 class="card-title"> <b> {{poll.question}} </b> </h4>
         <a href="{% url 'vote' poll.id %}" class="card-link">Vote</a>
         <a href="{% url 'detail-poll' poll.id %}" class="card-link">View Details</a>
+        <a href= "{% url 'deletepoll' poll.id %}" class="card-link"> <i class="far fa-trash-alt"></i></a>
       </div>
     </div>
 
