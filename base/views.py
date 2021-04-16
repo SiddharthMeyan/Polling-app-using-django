@@ -4,6 +4,7 @@ from django.http import HttpResponse
 from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views.generic import CreateView, DeleteView
+from django.views.generic.detail import SingleObjectMixin
 # Create your views here.
 
 def index(request):
@@ -48,7 +49,12 @@ class PollAdd(CreateView):
     success_url = reverse_lazy('home')
 
 
-class DeletePollView(DeleteView):
+class DeletePollView(DeleteView,SingleObjectMixin):
     model = Polls
     template_name = 'delete_poll.html'
     success_url = reverse_lazy('home')
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['Polls'] = self.object
+        return context
